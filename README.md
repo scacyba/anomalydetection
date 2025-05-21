@@ -9,8 +9,8 @@
 3. 数値列を1〜3列選択して異常検知を実行
 4. 最も異常が多い列組み合わせの可視化を確認
 
-Streamlit Cloudにホスティングしています。
-https://anomalydetection-i5qqedcisdfrisuxnzw5gj.streamlit.app/
+Streamlit Cloudにホスティングしていますのでご自由にどうぞ。：
+https://anomalydetection-qda4kodj2eroet4mhorysw.streamlit.app/
 
 ## 起動方法（ローカル）
 
