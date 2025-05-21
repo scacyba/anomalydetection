@@ -58,7 +58,8 @@ if uploaded_file is not None:
                 # 青と赤で丁寧に分けてscatterすると、PRODUCT_IDなどの文字列の場合、左側から青赤の順に書いてしまう。なので青をすべてプロットして、赤で塗りつぶす。
                 # ax.scatter(df.loc[~df["anomaly_flag"], timestamp_col_order], df.loc[~df["anomaly_flag"], top_cols[0]], color="blue", label=top_cols[0], s=10, zorder=1)
                 ax.scatter(df[timestamp_col], df[top_cols[0]], color="blue", label=top_cols[0], s=10, zorder=1)
-                ax.scatter(df.loc[ df["anomaly_flag"], timestamp_col], df.loc[ df["anomaly_flag"], top_cols[0]], color="red", label="異常", s=20, zorder=2)
+                # streamlitでは日本語が豆腐になったのであきらめた。ax.scatter(df.loc[ df["anomaly_flag"], timestamp_col], df.loc[ df["anomaly_flag"], top_cols[0]], color="red", label="異常", s=20, zorder=2)
+                ax.scatter(df.loc[ df["anomaly_flag"], timestamp_col], df.loc[ df["anomaly_flag"], top_cols[0]], color="red", label="Anomaly", s=20, zorder=2)
 
                 # ✅ 横軸ラベルが長い場合：90度回転
                 plt.xticks(rotation=90)
