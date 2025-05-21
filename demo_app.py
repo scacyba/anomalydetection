@@ -8,10 +8,20 @@ from itertools import combinations
 
 st.title("異常検知デモ")
 
-uploaded_file = st.file_uploader("CSVファイルをアップロード", type="csv")
+st.subheader("デモ用CSV")
+# サンプルCSV読み込み
+df = pd.read_csv("data/sample_sensor.csv")
+# ダウンロードボタン
+csv = df.to_csv(index=False).encode("utf-8")
+st.download_button("当方で用意したCSVを使う場合はこちらからダウンロードしてアップロード", csv, "sample.csv", "text/csv")
+
+# アップロードもOK
+st.subheader("自分のCSVを使う場合はこちら")
+uploaded_file = st.file_uploader("CSVをアップロード", type="csv")
 
 if uploaded_file is not None:
     try:
+    
         df = pd.read_csv(uploaded_file)
         st.subheader("データプレビュー")
         st.dataframe(df.head())
